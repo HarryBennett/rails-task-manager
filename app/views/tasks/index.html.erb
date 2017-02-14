@@ -1,0 +1,18 @@
+<h1>Tasks#index</h1>
+
+Your list is below
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <%= task.title %> /
+
+      <% if task.status == 0 %>
+      not done
+      <% else %>
+      done
+      <% end %>
+
+      / <%= link_to "Details", task_path(task.id) %>
+    </li>
+  <% end %>
+</ul>
